@@ -1,0 +1,36 @@
+:root {
+    --dark-purple: #672280;
+    --light-purple: #A626D3;
+    --black: #0D0D0D;
+}
+
+body {
+    font-family:'Karla', sans-serif;
+    color: var(--black);
+    font-weight: 400;
+    margin: 0;
+}
+
+.header {
+    background: linear-gradient(to right, var(--dark-purple), var(--light-purple));
+    width: 100%;
+    color: #fff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.header--headline {
+    font-weight: 700;
+    font-size: 1.3rem;
+    padding-left: 1em;
+    letter-spacing: -.75px;
+}
+
+.header--subhead {
+    font-size: 0.75rem;
+    font-weight: 400;
+    margin: 0;
+    padding-right: 1em;
+}
