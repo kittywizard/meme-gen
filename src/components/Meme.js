@@ -5,7 +5,7 @@ export default function Meme(){
     function handleClick() {
         const memeArray = memes.data.memes; //makes this less disgusting
         const randomNum = Math.floor((Math.random() * memeArray.length) + 1);
-        const {url} = memeArray[randomNum];
+        const {url} = memeArray[randomNum]; //makes it able to pull the url property from this array object automatically?? magic
         console.log(url)
     }
 
