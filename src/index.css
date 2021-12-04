@@ -87,3 +87,14 @@ body {
     border-radius: 5px;
     font-family: 'Karla', sans-serif;
 }
+
+.meme--div {
+    margin: 2em auto;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.meme--img {
+    max-height: 400px;
+}
