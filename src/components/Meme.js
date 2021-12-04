@@ -8,8 +8,9 @@ export default function Meme(){
     function handleClick() {
         const memeArray = memes.data.memes; //makes this less disgusting
         const randomNum = Math.floor((Math.random() * memeArray.length) + 1);
+        
 
-        setUrl(prevUrl => prevUrl = memeArray[randomNum].url);
+        setUrl(memeArray[randomNum].url); //can just set it if prevState not needed
     }
 
     return (
@@ -33,7 +34,10 @@ export default function Meme(){
             </div>
 
             <div className="meme--div">
-                <img src={url} className="meme--img" alt="meme"/>
+                <img src={url} className="meme--img"/>
+                {
+                    // probably should have this be hidden at first? so it doesn't show a broken link before you click for the first time.
+                }
             </div>
 
         </main>
