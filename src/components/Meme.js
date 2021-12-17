@@ -1,16 +1,37 @@
-import memes from '../memeData';
+import memesData from '../memeData';
 import React from 'react';
 
 export default function Meme(){
+        /**
 
-    const [url, setUrl] = React.useState('');
+     * Next, create a new state variable called `allMemeImages`
+     * which will default to `memesData`, which we imported above
+     * 
+     * Lastly, update the `getMemeImage` function and the markup 
+     * to reflect our newly reformed state object and array in the
+     * correct way.
+     */
+    
+
+    const [meme, setMeme] = React.useState({
+        topText: "",
+        bottomText: "",
+        randomImage: "",
+    });
+
+    const [allMemeImages, setMemeImages] = React.useState(memesData);
 
     function handleClick() {
-        const memeArray = memes.data.memes; //makes this less disgusting
+        const memeArray = allMemeImages.data.memes; //makes this less disgusting
         const randomNum = Math.floor((Math.random() * memeArray.length) + 1);
-        
 
-        setUrl(memeArray[randomNum].url); //can just set it if prevState not needed
+        setMeme(prevState => {
+          return {
+            ...prevState,
+            randomImage: [memeArray[randomNum].url]
+            }
+        });
+
     }
 
     return (
@@ -19,12 +40,12 @@ export default function Meme(){
                 <input 
                     type="text" 
                     id="memeFirst" 
-                    name="top-text"
+                    name="topText"
                     placeholder="Top Text"/>
                 <input 
                     type="text" 
                     id="memeSecond" 
-                    name="bottom-text"
+                    name="bottomText"
                     placeholder="Bottom Text"/>
                 <button 
                     className="meme--btn" 
@@ -34,8 +55,9 @@ export default function Meme(){
             </div>
 
             <div className="meme--div">
-                <img src={url} className="meme--img"/>
+                <img src={meme.randomImage} className="meme--img"/>
                 {
+                    console.log(meme)
                     // probably should have this be hidden at first? so it doesn't show a broken link before you click for the first time.
                 }
             </div>
