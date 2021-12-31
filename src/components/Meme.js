@@ -2,16 +2,7 @@ import memesData from '../memeData';
 import React from 'react';
 
 export default function Meme(){
-        /**
 
-     * Next, create a new state variable called `allMemeImages`
-     * which will default to `memesData`, which we imported above
-     * 
-     * Lastly, update the `getMemeImage` function and the markup 
-     * to reflect our newly reformed state object and array in the
-     * correct way.
-     */
-    
 
     const [meme, setMeme] = React.useState({
         topText: "",
@@ -56,10 +47,8 @@ export default function Meme(){
 
             <div className="meme--div">
                 <img src={meme.randomImage} className="meme--img"/>
-                {
-                    console.log(meme)
-                    // probably should have this be hidden at first? so it doesn't show a broken link before you click for the first time.
-                }
+                <h2 className="meme--text top">One does not simply</h2>
+                <h2 className="meme--text bottom">Walk into Mordor</h2>
             </div>
 
         </main>
